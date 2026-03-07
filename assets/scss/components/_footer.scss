@@ -1,0 +1,114 @@
+/*=============== FOOTER ===============*/
+.footer{
+   background-color: var(--first-color-light);
+   padding-block: 4rem 2rem;
+   transition: background-color .4s;
+
+   &__container{
+      row-gap: 3rem;
+   }
+   &__logo{
+      display: flex;
+      align-items: center;
+      justify-self: flex-start;
+      column-gap: .25rem;
+      margin-bottom: 1rem;
+
+      & i{
+         font-size: 1.5rem;
+         color: var(--title-color);
+         transition: color .4s;
+      }
+      & span{
+         font-size: var(--h3-font-size);
+         font-weight: var(--font-bold);
+         color: var(--first-color);
+      }
+   }
+   &__description{
+      margin-bottom: 2rem;
+   }
+   &__social{
+      display: flex;
+      column-gap: .75rem;
+
+      &-link{
+         width: 40px;
+         height: 40px;
+         background-color: var(--container-color);
+         box-shadow: var(--shadow-small);
+         border-radius: .75rem;
+         display: grid;
+         place-items: center;
+         font-size: 1.5rem;
+         color: var(--title-color);
+         transition: background-color .4s, box-shadow .4s, color .4s;
+   
+         &:hover{
+            background-color: var(--first-color);
+            box-shadow: 0 4px 8px var(--shadow-first-color);
+         }
+      }
+   }
+   &__content{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+   }
+   &__newsletter{
+      grid-column: 1 / 3;
+   }
+   &__title{
+      font-size: var(--h3-font-size);
+      margin-bottom: 1rem;
+   }
+   &__links{
+      display: grid;
+      row-gap: .5rem;
+   }
+   &__link{
+      color: var(--text-color);
+      transition: color .4s;
+
+      &:hover{
+         color: var(--title-color);
+      }
+   }
+   &__form{
+      margin-top: 1rem;
+      background-color: var(--container-color);
+      box-shadow: var(--shadow-small);
+      padding: .75rem .5rem;
+      border-radius: 1rem;
+      display: flex;
+      column-gap: .5rem;
+      transition: background-color .4s, color .4s;
+   }
+   &__input{
+      width: 100%;
+      background: transparent;
+      color: var(--title-color);
+      padding-left: .75rem;
+   }
+   &__button{
+      width: 48px;
+      height: 40px;
+      background-color: var(--first-color);
+      box-shadow: 0 4px 8px var(--shadow-first-color);
+      border-radius: .75rem;
+      font-size: 1.5rem;
+      color: var(--white-color);
+      cursor: pointer;
+      transition: background-color .4s, color .4s;
+
+      &:hover{
+         background-color: var(--first-color-alt);
+      }
+   }
+   &__copy{
+      display: block;
+      margin-top: 5rem;
+      text-align: center;
+      color: var(--text-color-light);
+      font-size: var(--small-font-size);
+   }
+}

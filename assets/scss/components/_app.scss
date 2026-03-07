@@ -1,0 +1,29 @@
+/*=============== APP ===============*/
+.app{
+   &__container{
+      background-color: var(--first-color-light);
+      padding: 3rem 1.5rem 0;
+      border-radius: 2rem;
+      row-gap: 3rem;
+      overflow: hidden;
+      transition: background-color .4s;
+   }
+   &__data .section__title{
+      margin-bottom: .5rem;
+   }
+   &__data{
+      text-align: center;
+   }
+   &__description{
+      margin-bottom: 2rem;
+   }
+   &__image{
+      width: 260px;
+      height: 310px;
+      justify-self: center;
+   }
+   &__img{
+      border-radius: 1.5rem;
+      filter: var(--shadow-img-small);
+   }
+}

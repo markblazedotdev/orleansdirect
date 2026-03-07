@@ -1,0 +1,19 @@
+/*=============== SERVICE ===============*/
+.service{
+   &__container{
+      grid-template-columns: 220px;
+      justify-content: center;
+      row-gap: 2rem;
+   }
+   &__card{
+      text-align: center;
+   }
+   &__img{
+      width: 150px;
+      margin: 0 auto 1.5rem;
+   }
+   &__title{
+      font-size: var(--h3-font-size);
+      margin-bottom: .5rem;
+   }
+}

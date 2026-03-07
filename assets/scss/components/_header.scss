@@ -1,0 +1,100 @@
+/*=============== HEADER & NAV ===============*/
+.header{
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background-color: var(--body-color);
+   z-index: var(--z-fixed);
+   transition: background-color .4s, box-shadow .4s;
+}
+
+.nav{
+   position: relative;
+   height: var(--header-height);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   &__logo{
+      display: flex;
+      align-items: center;
+      column-gap: .25rem;
+      
+      & i{
+         font-size: 1.5rem;
+         color: var(--title-color);
+         transition: color .4s;
+      }
+      & span{
+         font-weight: var(--font-bold);
+         color: var(--first-color);
+      }
+   }
+   &__toggle{
+      display: flex;
+      font-size: 1.5rem;
+      color: var(--title-color);
+      cursor: pointer;
+      transition: transform .4s;
+   }
+   // Navigation for mobile devices
+   &__menu{
+      @media screen and (max-width: 1150px){
+         position: fixed;
+         top: 5rem;
+         left: -200%;
+         right: 0;
+         margin: 0 auto;
+         width: 75%;
+         box-shadow: var(--shadow-big);
+         background-color: var(--body-color);
+         padding: 3.5rem;
+         border-radius: 3rem;
+         border: 3px solid var(--first-color);
+         transition: left .4s, background-color .4s, box-shadow .4s;
+      }
+   }
+   &__list{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.5rem;
+   }
+   &__link{
+      color: var(--title-color);
+      font-weight: var(--font-semi-bold);
+      transition: color .4s;
+
+      &:hover{
+         color: var(--first-color);
+      }
+   }
+   &__theme{
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.25rem;
+      color: var(--title-color);
+      cursor: pointer;
+   }
+}
+
+/* Show menu */
+.show-menu{
+   left: 0;
+
+   & + .nav__toggle{
+      transform: rotate(90deg);
+   }
+}
+
+/* Add shadow header */
+.shadow-header{
+   box-shadow: var(--shadow-big);
+}
+
+/* Active link */
+.active-link{
+   color: var(--first-color);
+}

@@ -1,0 +1,49 @@
+/*=============== MENU ===============*/
+.menu{
+   &__container{
+      grid-template-columns: repeat(2, 1fr);
+   }
+   &__card{
+      position: relative;
+      display: grid;
+      row-gap: .5rem;
+      background-color: var(--container-color);
+      box-shadow: var(--shadow-small);
+      padding: .5rem 1rem 1rem;
+      border-radius: 1.5rem;
+      transition: background-color .4s;
+   }
+   &__img{
+      width: 100px;
+      justify-self: center;
+      filter: var(--shadow-img-small);
+      transition: transform .4s;
+   }
+   &__card:hover &__img{
+      transform: translateY(-.25rem);
+   }
+   &__name{
+      font-size: var(--h3-font-size);
+   }
+   &__amount{
+      font-size: var(--small-font-size);
+      margin-block: .25rem .5rem;
+   }
+   &__price{
+      font-size: var(--h3-font-size);
+      color: var(--first-color);
+   }
+   &__button{
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      width: 32px;
+      height: 32px;
+      background-color: var(--first-color);
+      box-shadow: 0 4px 8px var(--shadow-first-color);
+      border-radius: .75rem;
+      font-size: 1.5rem;
+      color: var(--title-color);
+      cursor: pointer;
+   }
+}
