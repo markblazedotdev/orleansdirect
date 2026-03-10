@@ -668,7 +668,11 @@
 
         <div class="map__container container grid">
           <div class="map__area">
-            <img src="assets/img/map-img.png" alt="image" class="map__img" />
+            <div class="map__veil" aria-hidden="true">
+              <img src="assets/img/map-img.png" alt="" class="map__img" />
+              <div class="map__veil-gradient"></div>
+              <p class="map__veil-text">Service area revealed as you scroll</p>
+            </div>
             <!-- Insert your location into Google Maps (https://www.google.com/maps) -->
             <!-- Click Share -> Embed Map -> Copy HTML -->
             <iframe
@@ -685,20 +689,11 @@
           <div class="map__content grid">
             <div class="map__card">
               <h3 class="map__title">
-                <i class="ri-map-pin-2-fill"></i>
-                Location
-              </h3>
-
-              <address class="map__info">Orléans only</address>
-            </div>
-
-            <div class="map__card">
-              <h3 class="map__title">
                 <i class="ri-calendar-schedule-fill"></i>
                 Schedule
               </h3>
 
-              <address class="map__info">07:00 - 22:00</address>
+              <address class="map__info">08:00 - 22:00</address>
             </div>
 
             <div class="map__card">
@@ -780,7 +775,7 @@
 
             <ul class="footer__links">
               <li>
-                <a href="#" class="footer__link">Why Food?</a>
+                <a href="#" class="footer__link">Why OD?</a>
               </li>
 
               <li>
@@ -843,8 +838,8 @@
       </div>
 
       <span class="footer__copy">
-        &#169; <span id="copyright-year"></span> Orléans Direct. All rights
-        reserved
+        &#169; <span id="copyright-year"></span> Orléans Direct. <br />
+        All rights reserved
       </span>
     </footer>
 

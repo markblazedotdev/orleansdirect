@@ -194,6 +194,26 @@ const initSite = () => {
   sr.reveal(`.map__area`, { origin: "right" });
   sr.reveal(`.map__card`, { origin: "left", delay: 600 });
 
+  const mapArea = document.querySelector(".map__area");
+
+  if (mapArea) {
+    const mapRevealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          mapArea.classList.add("map__area--revealed");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.35,
+      },
+    );
+
+    mapRevealObserver.observe(mapArea);
+  }
+
   sr.reveal(`.footer__data, .footer__content div`, { interval: 100 });
 
   /*=============== AUTO COPYRIGHT YEAR UPDATE ===============*/
