@@ -840,7 +840,7 @@ img {
 /*=============== FOOTER ===============*/
 .footer {
   background-color: var(--first-color-light);
-  padding-block: 4rem 2rem;
+  padding-block: 3rem 2rem;
   transition: background-color 0.4s;
 }
 
@@ -964,7 +964,7 @@ img {
 
 .footer__copy {
   display: block;
-  margin-top: 5rem;
+  margin-top: 3rem;
   text-align: center;
   color: var(--text-color-light);
   font-size: var(--small-font-size);
@@ -1327,7 +1327,7 @@ img {
   }
 
   .footer {
-    padding-block: 6rem 3rem;
+    padding-block: 5rem 3rem;
   }
   .footer__container {
     grid-template-columns: repeat(2, max-content);
