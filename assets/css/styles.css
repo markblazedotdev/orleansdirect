@@ -10,11 +10,7 @@
   --first-color: #3a7bff;
   --first-color-alt: #2f69de;
   --first-color-light: #e8f0ff;
-  --gradient-color: linear-gradient(
-    180deg,
-    #5b93ff 0%,
-    #2f69de 100%
-  );
+  --gradient-color: linear-gradient(180deg, #5b93ff 0%, #2f69de 100%);
   --title-color: #0a2540;
   --text-color: #2b4764;
   --text-color-light: #607890;
@@ -236,9 +232,25 @@ img {
   flex-shrink: 0;
 }
 
+.brand-logo--dark {
+  display: none;
+}
+
+.dark-theme .brand-logo--light {
+  display: none;
+}
+
+.dark-theme .brand-logo--dark {
+  display: block;
+}
+
 .nav__logo span {
   font-weight: var(--font-bold);
-  color: var(--first-color);
+  color: #0a2540;
+}
+
+.dark-theme .nav__logo span {
+  color: var(--white-color);
 }
 
 .nav__toggle {
@@ -811,7 +823,11 @@ img {
 .footer__logo span {
   font-size: var(--h3-font-size);
   font-weight: var(--font-bold);
-  color: var(--first-color);
+  color: #0a2540;
+}
+
+.dark-theme .footer__logo span {
+  color: var(--white-color);
 }
 
 .footer__description {
