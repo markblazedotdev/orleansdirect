@@ -763,9 +763,9 @@ img {
   z-index: 2;
   overflow: hidden;
   transition:
-    transform 1.6s ease,
-    opacity 1.6s ease,
-    visibility 1.6s ease;
+    transform 3s ease,
+    opacity 3s ease,
+    visibility 3s ease;
 }
 
 .map__veil-gradient {
@@ -774,8 +774,8 @@ img {
   background:
     linear-gradient(180deg, rgba(6, 24, 43, 0.18), rgba(6, 24, 43, 0.55)),
     linear-gradient(135deg, rgba(58, 123, 255, 0.24), rgba(255, 255, 255, 0.08));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .map__veil-text {
