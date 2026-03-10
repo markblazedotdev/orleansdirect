@@ -3,6 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <style>
+      body.site-locked {
+        overflow: hidden;
+      }
+
+      .password-gate {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: none;
+        place-items: center;
+        padding: 1.5rem;
+        background:
+          radial-gradient(circle at top, rgba(227, 170, 112, 0.22), transparent 32%),
+          linear-gradient(180deg, #14110f 0%, #221b18 100%);
+      }
+
+      body.site-locked .password-gate {
+        display: grid;
+      }
+
+      .password-gate__panel {
+        width: min(100%, 28rem);
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.5rem;
+        background: rgba(16, 12, 10, 0.9);
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35);
+        color: #fffdf8;
+      }
+
+      .password-gate__title {
+        margin: 0 0 0.75rem;
+        font-size: 1.75rem;
+      }
+
+      .password-gate__text {
+        margin: 0 0 1.5rem;
+        color: rgba(255, 253, 248, 0.76);
+        line-height: 1.6;
+      }
+
+      .password-gate__form {
+        display: grid;
+        gap: 0.85rem;
+      }
+
+      .password-gate__input {
+        width: 100%;
+        padding: 0.95rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 0.9rem;
+        background: rgba(255, 255, 255, 0.06);
+        color: inherit;
+      }
+
+      .password-gate__input::placeholder {
+        color: rgba(255, 253, 248, 0.45);
+      }
+
+      .password-gate__button {
+        border: 0;
+        border-radius: 0.9rem;
+        padding: 1rem 1.2rem;
+        background: #e3aa70;
+        color: #1f1815;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .password-gate__error {
+        min-height: 1.25rem;
+        margin: 0;
+        color: #ffb4b4;
+        font-size: 0.95rem;
+      }
+    </style>
+
+    <script>
+      if (sessionStorage.getItem("site-authenticated") === "true") {
+        document.documentElement.classList.add("site-authenticated");
+      } else {
+        document.documentElement.classList.add("site-locked");
+      }
+    </script>
 
     <!--=============== FAVICON ===============-->
     <link
@@ -39,7 +127,32 @@
 
     <title>Orléans Direct</title>
   </head>
-  <body>
+  <body class="site-locked">
+    <div class="password-gate" id="password-gate">
+      <div class="password-gate__panel">
+        <h1 class="password-gate__title">Private Preview</h1>
+        <p class="password-gate__text">
+          This GitHub Pages site is currently protected with a temporary access
+          password.
+        </p>
+
+        <form class="password-gate__form" id="password-form">
+          <input
+            class="password-gate__input"
+            id="password-input"
+            type="password"
+            placeholder="Enter password"
+            autocomplete="current-password"
+            required
+          />
+          <button class="password-gate__button" type="submit">
+            Enter Site
+          </button>
+          <p class="password-gate__error" id="password-error"></p>
+        </form>
+      </div>
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
