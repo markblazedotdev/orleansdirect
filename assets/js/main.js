@@ -1,7 +1,7 @@
 const PASSWORD_STORAGE_KEY = "site-authenticated";
 // Password
 const PASSWORD_HASH =
-  "8ba27cde27e55c2c1c7838df2ba2d7e540f8df5c92467d56cb66d9fea432192b";
+  "d0ba0405a4a6c46c8818d673c17c1f4396122c154208c296fe6266f3f65cb2ec";
 
 const hashPassword = async (value) => {
   const digest = await crypto.subtle.digest(
