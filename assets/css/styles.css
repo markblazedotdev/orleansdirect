@@ -225,13 +225,15 @@ img {
 .nav__logo {
   display: flex;
   align-items: center;
-  column-gap: 0.25rem;
+  column-gap: 0.6rem;
 }
 
-.nav__logo i {
-  font-size: 1.5rem;
-  color: var(--title-color);
-  transition: color 0.4s;
+.brand-logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .nav__logo span {
@@ -802,14 +804,8 @@ img {
   display: flex;
   align-items: center;
   justify-self: flex-start;
-  column-gap: 0.25rem;
+  column-gap: 0.6rem;
   margin-bottom: 1rem;
-}
-
-.footer__logo i {
-  font-size: 1.5rem;
-  color: var(--title-color);
-  transition: color 0.4s;
 }
 
 .footer__logo span {
