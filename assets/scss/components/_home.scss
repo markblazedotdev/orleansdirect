@@ -2,12 +2,12 @@
 .home{
    &__container{
       padding-block: 1.5rem;
-      row-gap: 3rem;
+      row-gap: 2rem;
    }
    &__data{
       text-align: center;
       display: grid;
-      row-gap: 3rem;
+      row-gap: 2rem;
    }
    &__title{
       font-size: var(--biggest-font-size);
@@ -18,7 +18,7 @@
       }
    }
    &__description{
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
    }
    &__social{
       display: flex;
@@ -50,7 +50,7 @@
       border: 1px solid rgba(10, 37, 64, .08);
       border-radius: 2.5rem;
       justify-self: center;
-      margin-top: 1rem;
+      margin-top: .25rem;
       box-shadow: 0 18px 40px rgba(10, 37, 64, .18);
       isolation: isolate;
 
