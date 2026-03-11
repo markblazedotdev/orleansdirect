@@ -389,7 +389,7 @@ img {
   border: 1px solid rgba(10, 37, 64, 0.08);
   border-radius: 2.5rem;
   justify-self: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
   box-shadow: 0 18px 40px rgba(10, 37, 64, 0.18);
   isolation: isolate;
 }
@@ -410,7 +410,7 @@ img {
   inset: 0.75rem;
   height: calc(100% - 1.5rem);
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   border-radius: calc(2.5rem - 0.75rem);
   clip-path: inset(0 round calc(2.5rem - 0.75rem));
   filter: drop-shadow(0 16px 26px rgba(10, 37, 64, 0.2));
@@ -1168,11 +1168,13 @@ img {
     width: 600px;
     height: 420px;
     border-radius: 3.5rem;
+    margin-top: 0;
   }
   .home__img {
     width: calc(100% - 2rem);
     inset: 1rem;
     height: calc(100% - 2rem);
+    object-position: center;
     border-radius: calc(3.5rem - 1rem);
     clip-path: inset(0 round calc(3.5rem - 1rem));
   }
