@@ -141,15 +141,19 @@
          justify-content: initial;
       }
       &__image{
-         width: 520px;
-         height: 520px;
-         border-radius: 11rem;
+         width: 600px;
+         height: 420px;
+         border-radius: 3.5rem;
       }
       &__img{
-         width: 380px;
+         width: calc(100% - 2rem);
+         inset: 1rem;
+         height: calc(100% - 2rem);
+         border-radius: calc(3.5rem - 1rem);
+         clip-path: inset(0 round calc(3.5rem - 1rem));
       }
       &__phone{
-         top: 15rem;
+         top: 11.5rem;
          left: -4rem;
          padding: .75rem;
          border-radius: 1.25rem;
@@ -165,7 +169,7 @@
       }
       &__comment{
          right: 1.5rem;
-         bottom: -3rem;
+         bottom: -2rem;
          width: 320px;
          padding: 2rem 3rem;
          border-radius: 2rem;
