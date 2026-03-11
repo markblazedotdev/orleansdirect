@@ -91,23 +91,6 @@ const initSite = () => {
   };
   window.addEventListener("scroll", shadowHeader);
 
-  /*=============== SWIPER REVIEWS ===============*/
-  new Swiper(".reviews__swiper", {
-    loop: true,
-    spaceBetween: 16,
-    grabCursor: true,
-    speed: 600,
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-  });
-
   /*=============== SHOW SCROLL UP ===============*/
   const scrollUp = () => {
     const scrollUp = document.getElementById("scroll-up");
@@ -181,9 +164,6 @@ const initSite = () => {
   });
 
   sr.reveal(`.menu__card`, { interval: 100 });
-
-  sr.reveal(`.reviews__content`, { origin: "right" });
-  sr.reveal(`.reviews__image`, { origin: "left", delay: 600 });
 
   sr.reveal(
     `.app .section__subtitle, .app .section__title, .app__description, .app .button`,
