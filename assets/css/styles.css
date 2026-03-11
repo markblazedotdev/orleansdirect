@@ -521,6 +521,7 @@ img {
 .service__img {
   width: 150px;
   margin: 0 auto 1.5rem;
+  border-radius: 1.5rem;
 }
 
 .service__title {
