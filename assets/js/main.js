@@ -73,16 +73,24 @@ const initSite = () => {
   const themeRoot = document.documentElement;
   const darkTheme = "dark-theme";
   const iconTheme = "ri-sun-fill";
+  const themeStorageKey = "selected-theme";
 
-  // Default to dark mode unless the user previously chose a different theme
-  themeRoot.classList.add(darkTheme);
-  themeButton.classList.add(iconTheme);
+  const applyTheme = (theme) => {
+    const isDark = theme !== "light";
+    themeRoot.classList.toggle(darkTheme, isDark);
+    themeButton.classList.toggle(iconTheme, isDark);
+  };
 
-  // Activate / deactivate the theme manually with the button
+  // Default to dark mode unless the user previously chose light mode.
+  applyTheme(localStorage.getItem(themeStorageKey) || "dark");
+
   themeButton.addEventListener("click", () => {
-    // Add or remove the dark / icon theme
-    themeRoot.classList.toggle(darkTheme);
-    themeButton.classList.toggle(iconTheme);
+    const nextTheme = themeRoot.classList.contains(darkTheme)
+      ? "light"
+      : "dark";
+
+    applyTheme(nextTheme);
+    localStorage.setItem(themeStorageKey, nextTheme);
   });
 
   /*=============== SCROLL REVEAL ANIMATION ===============*/

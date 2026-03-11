@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark-theme">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,11 @@
 
     <script>
       try {
-        document.documentElement.classList.add("dark-theme");
+        const savedTheme = localStorage.getItem("selected-theme");
+        document.documentElement.classList.toggle(
+          "dark-theme",
+          savedTheme !== "light",
+        );
       } catch (error) {
         document.documentElement.classList.add("dark-theme");
       }
