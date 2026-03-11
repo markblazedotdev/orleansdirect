@@ -410,7 +410,7 @@ img {
   inset: 0.75rem;
   height: calc(100% - 1.5rem);
   object-fit: cover;
-  object-position: center top;
+  object-position: 40% top;
   border-radius: calc(2.5rem - 0.75rem);
   clip-path: inset(0 round calc(2.5rem - 0.75rem));
   filter: drop-shadow(0 16px 26px rgba(10, 37, 64, 0.2));
