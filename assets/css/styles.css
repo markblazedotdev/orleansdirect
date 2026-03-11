@@ -744,9 +744,13 @@ img {
   margin-bottom: 2rem;
 }
 
+.app__social {
+  margin-top: 1.5rem;
+}
+
 .app__image {
-  width: 260px;
-  height: 310px;
+  width: 290px;
+  height: 345px;
   justify-self: center;
 }
 
@@ -1322,8 +1326,8 @@ img {
     padding-right: 2rem;
   }
   .app__image {
-    width: 360px;
-    height: 330px;
+    width: 400px;
+    height: 370px;
   }
   .app__img {
     border-radius: 2rem;
