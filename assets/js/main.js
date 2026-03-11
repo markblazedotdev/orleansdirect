@@ -1,61 +1,3 @@
-const PASSWORD_STORAGE_KEY = "site-authenticated";
-// Password
-const PASSWORD_HASH =
-  "d0ba0405a4a6c46c8818d673c17c1f4396122c154208c296fe6266f3f65cb2ec";
-
-const hashPassword = async (value) => {
-  const digest = await crypto.subtle.digest(
-    "SHA-256",
-    new TextEncoder().encode(value),
-  );
-
-  return Array.from(new Uint8Array(digest))
-    .map((byte) => byte.toString(16).padStart(2, "0"))
-    .join("");
-};
-
-const unlockSite = () => {
-  sessionStorage.setItem(PASSWORD_STORAGE_KEY, "true");
-  document.documentElement.classList.remove("site-locked");
-  document.documentElement.classList.add("site-authenticated");
-  document.body.classList.remove("site-locked");
-  const passwordGate = document.getElementById("password-gate");
-  if (passwordGate) passwordGate.remove();
-  initSite();
-};
-
-const setupPasswordGate = () => {
-  if (sessionStorage.getItem(PASSWORD_STORAGE_KEY) === "true") {
-    document.body.classList.remove("site-locked");
-    unlockSite();
-    return;
-  }
-
-  const form = document.getElementById("password-form");
-  const input = document.getElementById("password-input");
-  const error = document.getElementById("password-error");
-
-  if (!form || !input || !error) return;
-
-  input.focus();
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    error.textContent = "";
-
-    const submittedPassword = input.value.trim();
-    const submittedHash = await hashPassword(submittedPassword);
-
-    if (submittedHash === PASSWORD_HASH) {
-      unlockSite();
-      return;
-    }
-
-    error.textContent = "Incorrect password.";
-    input.select();
-  });
-};
-
 const initSite = () => {
   if (document.body.dataset.siteInitialized === "true") return;
   document.body.dataset.siteInitialized = "true";
@@ -201,4 +143,4 @@ const initSite = () => {
     new Date().getFullYear();
 };
 
-setupPasswordGate();
+initSite();
