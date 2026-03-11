@@ -734,7 +734,7 @@ img {
 }
 
 .app__data .section__title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .app__data {
@@ -742,7 +742,20 @@ img {
 }
 
 .app__description {
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.app__description--list {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.app__description--list > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .app__social {
@@ -1325,6 +1338,9 @@ img {
   .app__description {
     margin-block: 0.5rem 3rem;
     padding-right: 2rem;
+  }
+  .app__description--list {
+    margin-bottom: 1.25rem;
   }
   .app__image {
     width: 400px;
