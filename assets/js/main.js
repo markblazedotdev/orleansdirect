@@ -77,6 +77,7 @@ const initSite = () => {
     });
   };
   window.addEventListener("scroll", scrollActive);
+  window.addEventListener("hashchange", scrollActive);
 
   /*=============== DARK LIGHT THEME ===============*/
   const themeButton = document.getElementById("theme-button");
@@ -212,6 +213,11 @@ const initSite = () => {
   /*=============== AUTO COPYRIGHT YEAR UPDATE ===============*/
   document.getElementById("copyright-year").innerHTML =
     new Date().getFullYear();
+
+  shadowHeader();
+  scrollUp();
+  scrollActive();
+  window.addEventListener("load", scrollActive, { once: true });
 };
 
 initSite();
