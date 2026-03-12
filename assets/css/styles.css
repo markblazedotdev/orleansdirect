@@ -762,10 +762,15 @@ img {
   margin-top: 1.5rem;
 }
 
+.app__data .button {
+  margin-top: 1.25rem;
+}
+
 .app__image {
   width: 290px;
-  height: 345px;
+  height: 240px;
   justify-self: center;
+  margin-top: 1.25rem;
 }
 
 .app__img {
@@ -899,6 +904,7 @@ img {
 }
 
 .footer__description {
+  max-width: 30ch;
   margin-bottom: 2rem;
 }
 
@@ -1342,9 +1348,16 @@ img {
   .app__description--list {
     margin-bottom: 1.25rem;
   }
+  .app__data .button {
+    margin-top: 2rem;
+  }
+  .app__social {
+    margin-top: 2rem;
+  }
   .app__image {
     width: 400px;
     height: 370px;
+    margin-top: 2rem;
   }
   .app__img {
     border-radius: 2rem;
@@ -1373,6 +1386,9 @@ img {
   .footer__container {
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
+  }
+  .footer__description {
+    max-width: 24ch;
   }
   .footer__content {
     column-gap: 5rem;
