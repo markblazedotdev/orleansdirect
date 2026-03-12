@@ -4,18 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex,nofollow" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://www.google.com https://www.gstatic.com https://maps.gstatic.com; frame-src https://www.google.com https://www.google.com/maps https://maps.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    />
+    <meta
+      name="referrer"
+      content="strict-origin-when-cross-origin"
+    />
 
-    <script>
-      try {
-        const savedTheme = localStorage.getItem("selected-theme");
-        document.documentElement.classList.toggle(
-          "dark-theme",
-          savedTheme !== "light",
-        );
-      } catch (error) {
-        document.documentElement.classList.add("dark-theme");
-      }
-    </script>
+    <script src="assets/js/theme-init.js"></script>
 
     <!--=============== FAVICON ===============-->
     <link
@@ -41,7 +39,7 @@
     <!--=============== REMIXICONS ===============-->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      href="assets/vendor/remixicon/fonts/remixicon.css"
     />
 
     <!--=============== CSS ===============-->
@@ -135,6 +133,7 @@
               <a
                 href="https://m.me/orleansdirect"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="home__link"
               >
                 <i class="ri-messenger-fill"></i>
@@ -143,6 +142,7 @@
               <a
                 href="https://www.instagram.com/orleansdirect/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="home__link"
               >
                 <i class="ri-instagram-fill"></i>
@@ -151,6 +151,7 @@
               <a
                 href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="home__link"
               >
                 <i class="ri-whatsapp-fill"></i>
@@ -159,6 +160,7 @@
               <a
                 href="https://web.telegram.org/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="home__link"
               >
                 <i class="ri-telegram-2-fill"></i>
@@ -378,6 +380,7 @@
             <a
               href="https://m.me/orleansdirect"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__link"
             >
               <i class="ri-messenger-fill"></i>
@@ -386,6 +389,7 @@
             <a
               href="https://www.instagram.com/orleansdirect/"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__link"
             >
               <i class="ri-instagram-fill"></i>
@@ -394,6 +398,7 @@
             <a
               href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__link"
             >
               <i class="ri-whatsapp-fill"></i>
@@ -402,6 +407,7 @@
             <a
               href="https://web.telegram.org/"
               target="_blank"
+              rel="noopener noreferrer"
               class="home__link"
             >
               <i class="ri-telegram-2-fill"></i>
