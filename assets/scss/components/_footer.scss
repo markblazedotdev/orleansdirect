@@ -54,9 +54,6 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 3rem;
    }
-   &__newsletter{
-      grid-column: 1 / 3;
-   }
    &__title{
       font-size: var(--h3-font-size);
       margin-bottom: 1rem;
@@ -71,37 +68,6 @@
 
       &:hover{
          color: var(--title-color);
-      }
-   }
-   &__form{
-      margin-top: 1rem;
-      background-color: var(--container-color);
-      box-shadow: var(--shadow-small);
-      padding: .75rem .5rem;
-      border-radius: 1rem;
-      display: flex;
-      column-gap: .5rem;
-      transition: background-color .4s, color .4s;
-   }
-   &__input{
-      width: 100%;
-      background: transparent;
-      color: var(--title-color);
-      padding-left: .75rem;
-   }
-   &__button{
-      width: 48px;
-      height: 40px;
-      background-color: var(--first-color);
-      box-shadow: 0 4px 8px var(--shadow-first-color);
-      border-radius: .75rem;
-      font-size: 1.5rem;
-      color: var(--white-color);
-      cursor: pointer;
-      transition: background-color .4s, color .4s;
-
-      &:hover{
-         background-color: var(--first-color-alt);
       }
    }
    &__copy{

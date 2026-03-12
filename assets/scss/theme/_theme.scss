@@ -15,17 +15,12 @@
 	the website, in dark theme
 ==========*/
 .dark-theme{
-	& :is(.button, .home__link:hover, .menu__button, 
-			.swiper-button-prev:hover, .swiper-button-next:hover, 
-			.footer__social-link:hover, .footer__button:hover){
+	& :is(.button, .home__link:hover){
 		color: var(--dark-color);
 	}
-	
+
 	& .footer{
 		background-color: var(--container-color);
-	}
-	& :is(.footer__social-link, .footer__form){
-		background-color: var(--body-color);
 	}
 	&::-webkit-scrollbar{
 		background-color: hsl(45, 8%, 12%);

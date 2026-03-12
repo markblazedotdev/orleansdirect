@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* Source styles live in assets/scss/styles.scss; keep this compiled file in sync. */
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -132,22 +133,13 @@ img {
 .dark-theme
   :is(
     .button,
-    .home__link:hover,
-    .menu__button,
-    .swiper-button-prev:hover,
-    .swiper-button-next:hover,
-    .footer__social-link:hover,
-    .footer__button:hover
+    .home__link:hover
   ) {
   color: var(--white-color);
 }
 
 .dark-theme .footer {
   background-color: var(--container-color);
-}
-
-.dark-theme :is(.footer__social-link, .footer__form) {
-  background-color: var(--body-color);
 }
 
 .dark-theme::-webkit-scrollbar {
@@ -257,6 +249,11 @@ img {
 
 .nav__toggle {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  border: 0;
   font-size: 1.5rem;
   color: var(--title-color);
   cursor: pointer;
@@ -305,9 +302,22 @@ img {
   position: absolute;
   top: 2rem;
   right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  border: 0;
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
+}
+
+.nav__toggle:focus-visible,
+.nav__theme:focus-visible {
+  outline: 2px solid var(--first-color);
+  outline-offset: 0.3rem;
+  border-radius: 0.75rem;
 }
 
 /* Show menu */
@@ -529,226 +539,33 @@ img {
   margin-bottom: 0.5rem;
 }
 
-/*=============== MENU ===============*/
-.menu__container {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.menu__card {
-  position: relative;
-  display: grid;
-  row-gap: 0.5rem;
-  background-color: var(--container-color);
-  box-shadow: var(--shadow-small);
-  padding: 0.5rem 1rem 1rem;
-  border-radius: 1.5rem;
-  transition: background-color 0.4s;
-}
-
-.menu__img {
-  width: 100px;
-  justify-self: center;
-  filter: var(--shadow-img-small);
-  transition: transform 0.4s;
-}
-
-.menu__card:hover .menu__img {
-  transform: translateY(-0.25rem);
-}
-
-.menu__name {
-  font-size: var(--h3-font-size);
-}
-
-.menu__amount {
-  font-size: var(--small-font-size);
-  margin-block: 0.25rem 0.5rem;
-}
-
-.menu__price {
-  font-size: var(--h3-font-size);
-  color: var(--first-color);
-}
-
-.menu__button {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  width: 32px;
-  height: 32px;
-  background-color: var(--first-color);
-  box-shadow: 0 4px 8px var(--shadow-first-color);
-  border-radius: 0.75rem;
-  font-size: 1.5rem;
-  color: var(--title-color);
-  cursor: pointer;
-}
-
-/*=============== REVIEWS ===============*/
-.reviews__container {
-  row-gap: 6rem;
-}
-
-.reviews__content {
-  display: grid;
-}
-
-.reviews__swiper {
-  margin-inline: initial;
-  padding-bottom: 6rem;
-}
-
-.reviews__card {
-  display: grid;
-  row-gap: 1rem;
-}
-
-.reviews__profile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0.5rem;
-}
-
-.reviews__photo {
-  width: 60px;
-  border-radius: 50%;
-}
-
-.reviews__data {
-  display: grid;
-  row-gap: 0.25rem;
-}
-
-.reviews__name,
-.reviews__number {
-  font-size: var(--h3-font-size);
-}
-
-.reviews__rating {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-}
-
-.reviews__stars {
-  display: flex;
-  column-gap: 0.25rem;
-}
-
-.reviews__stars i {
-  font-size: 1rem;
-  color: var(--first-color);
-}
-
-.reviews__comment {
-  position: relative;
-  width: 280px;
-  justify-self: center;
-  text-align: center;
-}
-
-.reviews__comment::before {
-  content: open-quote;
-  position: absolute;
-  left: -1rem;
-  top: -0.5rem;
-}
-
-.reviews__comment::after {
-  content: close-quote;
-  position: absolute;
-  right: -1rem;
-  bottom: -2rem;
-}
-
-.reviews__comment::before,
-.reviews__comment::after {
-  font-size: 2.5rem;
-  font-weight: var(--font-semi-bold);
-  color: var(--first-color);
-}
-
-.reviews__image {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  background: var(--gradient-color);
-  border-radius: 6rem;
-  justify-self: center;
-}
-
-.reviews__img {
-  width: 270px;
-  position: absolute;
-  bottom: 0;
-  left: 2rem;
-  right: 0;
-  margin: 0 auto;
-  mask-image: linear-gradient(var(--first-color) 80%, transparent 95%);
-  filter: var(--shadow-img-big);
-}
-
-/* Swiper class */
-.reviews .swiper-navigation-icon {
-  display: none;
-}
-
-.reviews :is(.swiper-button-prev, .swiper-button-next) {
-  top: initial;
-  bottom: 1.5rem;
-  width: 40px;
-  height: 40px;
-  background-color: var(--container-color);
-  box-shadow: var(--shadow-small);
-  color: var(--title-color);
-  border-radius: 0.75rem;
-  font-size: 1.5rem;
-  transition:
-    background-color 0.4s,
-    box-shadow 0.4s,
-    color 0.4s;
-}
-
-.reviews :is(.swiper-button-prev, .swiper-button-next):hover {
-  background-color: var(--first-color);
-  box-shadow: 0 4px 8px var(--shadow-first-color);
-}
-
-.reviews .swiper-button-prev {
-  left: calc(50% - 3rem);
-}
-
-.reviews .swiper-button-next {
-  right: calc(50% - 3rem);
-}
-
 /*=============== APP ===============*/
 .app__container {
   background-color: var(--first-color-light);
-  padding: 3rem 1.5rem 0;
+  padding: 3rem 1.5rem;
   border-radius: 2rem;
-  row-gap: 3rem;
+  row-gap: 2rem;
   overflow: hidden;
   transition: background-color 0.4s;
 }
 
 .app__data .section__title {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .app__data {
+  display: grid;
+  gap: 1.25rem;
   text-align: center;
 }
 
 .app__description {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 .app__description--list {
   display: grid;
   gap: 0.75rem;
-  margin-bottom: 1.25rem;
 }
 
 .app__description--list > span {
@@ -758,22 +575,25 @@ img {
   gap: 1rem;
 }
 
-.app__social {
-  margin-top: 1.5rem;
+.app__actions {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
 }
 
-.app__data .button {
-  margin-top: 1.25rem;
+.app__social {
+  margin-top: 0;
+  justify-self: center;
 }
 
 .app__image {
-  width: 290px;
-  height: 240px;
+  width: min(100%, 20rem);
   justify-self: center;
-  margin-top: 1.25rem;
 }
 
 .app__img {
+  width: 100%;
+  height: auto;
   border-radius: 1.5rem;
   filter: var(--shadow-img-small);
 }
@@ -913,34 +733,9 @@ img {
   column-gap: 0.75rem;
 }
 
-.footer__social-link {
-  width: 40px;
-  height: 40px;
-  background-color: var(--container-color);
-  box-shadow: var(--shadow-small);
-  border-radius: 0.75rem;
-  display: grid;
-  place-items: center;
-  font-size: 1.5rem;
-  color: var(--title-color);
-  transition:
-    background-color 0.4s,
-    box-shadow 0.4s,
-    color 0.4s;
-}
-
-.footer__social-link:hover {
-  background-color: var(--first-color);
-  box-shadow: 0 4px 8px var(--shadow-first-color);
-}
-
 .footer__content {
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
-}
-
-.footer__newsletter {
-  grid-column: 1/3;
 }
 
 .footer__title {
@@ -960,44 +755,6 @@ img {
 
 .footer__link:hover {
   color: var(--title-color);
-}
-
-.footer__form {
-  margin-top: 1rem;
-  background-color: var(--container-color);
-  box-shadow: var(--shadow-small);
-  padding: 0.75rem 0.5rem;
-  border-radius: 1rem;
-  display: flex;
-  column-gap: 0.5rem;
-  transition:
-    background-color 0.4s,
-    color 0.4s;
-}
-
-.footer__input {
-  width: 100%;
-  background: transparent;
-  color: var(--title-color);
-  padding-left: 0.75rem;
-}
-
-.footer__button {
-  width: 48px;
-  height: 40px;
-  background-color: var(--first-color);
-  box-shadow: 0 4px 8px var(--shadow-first-color);
-  border-radius: 0.75rem;
-  font-size: 1.5rem;
-  color: var(--white-color);
-  cursor: pointer;
-  transition:
-    background-color 0.4s,
-    color 0.4s;
-}
-
-.footer__button:hover {
-  background-color: var(--first-color-alt);
 }
 
 .footer__copy {
@@ -1062,24 +819,8 @@ img {
 
   .home__image,
   .app__image,
-  .reviews__image,
   .map__area {
     width: 100%;
-  }
-
-  .menu__container {
-    grid-template-columns: 180px;
-    justify-content: center;
-  }
-
-  .reviews__container {
-    row-gap: 4rem;
-  }
-  .reviews__img {
-    left: 1rem;
-  }
-  .reviews__comment {
-    width: 85%;
   }
 
   .footer__content {
@@ -1093,14 +834,8 @@ img {
     width: 50%;
   }
 
-  .home__container,
-  .reviews__container {
+  .home__container {
     grid-template-columns: 380px;
-    justify-content: center;
-  }
-
-  .menu__container {
-    grid-template-columns: repeat(2, 180px);
     justify-content: center;
   }
 
@@ -1108,26 +843,11 @@ img {
     width: 380px;
     margin-inline: auto;
   }
-
-  .footer__form {
-    width: 360px;
-  }
 }
 
 @media screen and (min-width: 768px) {
   .service__container {
     grid-template-columns: repeat(2, 220px);
-  }
-
-  .menu__container {
-    grid-template-columns: repeat(3, 180px);
-  }
-
-  .footer__content {
-    grid-template-columns: repeat(3, max-content);
-  }
-  .footer__newsletter {
-    grid-column: initial;
   }
 }
 
@@ -1239,125 +959,38 @@ img {
     margin-bottom: 2rem;
   }
 
-  .menu__container {
-    grid-template-columns: repeat(4, 260px);
-    row-gap: 2rem;
-  }
-  .menu__card {
-    padding: 1rem 1.5rem 2rem;
-    border-radius: 2rem;
-  }
-  .menu__img {
-    width: 160px;
-  }
-  .menu__name,
-  .menu__price {
-    font-size: var(--h2-font-size);
-  }
-  .menu__amount {
-    font-size: var(--normal-font-size);
-    margin-block: 0.5rem 1rem;
-  }
-  .menu__button {
-    right: 1.5rem;
-    bottom: 2rem;
-    width: 48px;
-    height: 48px;
-    border-radius: 1rem;
-    font-size: 2rem;
-  }
-
-  .reviews__container {
-    grid-template-columns: 450px 560px;
-    column-gap: 5rem;
-    padding-block: 7rem 3rem;
-  }
-  .reviews__image {
-    width: 450px;
-    height: 450px;
-    border-radius: 9rem;
-    order: -1;
-  }
-  .reviews__img {
-    width: 380px;
-  }
-  .reviews__content {
-    display: initial;
-  }
-  .reviews__content :is(.section__title, .section__subtitle) {
-    text-align: initial;
-  }
-  .reviews__swiper {
-    padding-bottom: 8rem;
-  }
-  .reviews__card {
-    row-gap: 3rem;
-  }
-  .reviews__profile {
-    justify-content: initial;
-    column-gap: 1rem;
-  }
-  .reviews__photo {
-    width: 80px;
-  }
-  .reviews__data {
-    row-gap: 0.5rem;
-  }
-  .reviews__comment {
-    width: 450px;
-    text-align: initial;
-  }
-  .reviews__comment::before,
-  .reviews__comment::after {
-    font-size: 5rem;
-  }
-  .reviews__comment::before {
-    top: -1.5rem;
-    left: -3.5rem;
-  }
-  .reviews__comment::after {
-    right: -3.5rem;
-    bottom: -3rem;
-  }
-  .reviews .swiper-button-prev {
-    left: 0.5rem;
-  }
-  .reviews .swiper-button-next {
-    left: 4rem;
-  }
-
   .app {
     padding-bottom: 4rem;
   }
   .app__container {
     width: initial;
-    grid-template-columns: 420px 360px;
+    max-width: 980px;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 22rem);
+    align-items: center;
     justify-content: center;
-    column-gap: 8rem;
-    padding-block: 6rem;
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    padding: 5rem 4rem;
     border-radius: 4rem;
   }
   .app__data,
   .app__data :is(.section__title, .section__subtitle) {
     text-align: initial;
   }
+  .app__data {
+    gap: 1.5rem;
+  }
   .app__description {
-    margin-block: 0.5rem 3rem;
-    padding-right: 2rem;
+    margin-top: 0.5rem;
+    padding-right: 1rem;
   }
-  .app__description--list {
-    margin-bottom: 1.25rem;
-  }
-  .app__data .button {
-    margin-top: 2rem;
+  .app__actions {
+    justify-items: start;
   }
   .app__social {
-    margin-top: 2rem;
+    justify-self: start;
   }
   .app__image {
-    width: 400px;
-    height: 370px;
-    margin-top: 2rem;
+    width: min(100%, 22rem);
   }
   .app__img {
     border-radius: 2rem;
@@ -1392,9 +1025,6 @@ img {
   }
   .footer__content {
     column-gap: 5rem;
-  }
-  .footer__form {
-    width: 330px;
   }
 
   .scrollup {

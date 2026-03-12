@@ -2,30 +2,49 @@
 .app{
    &__container{
       background-color: var(--first-color-light);
-      padding: 3rem 1.5rem 0;
+      padding: 3rem 1.5rem;
       border-radius: 2rem;
-      row-gap: 3rem;
+      row-gap: 2rem;
       overflow: hidden;
       transition: background-color .4s;
    }
    &__data .section__title{
-      margin-bottom: .5rem;
+      margin-bottom: 0;
    }
    &__data{
+      display: grid;
+      gap: 1.25rem;
       text-align: center;
    }
    &__description{
-      margin-bottom: 2rem;
+      margin-bottom: 0;
+   }
+   &__description--list{
+      display: grid;
+      gap: .75rem;
+   }
+   &__description--list > span{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+   }
+   &__actions{
+      display: grid;
+      justify-items: center;
+      gap: 1rem;
    }
    &__social{
-      margin-top: 1.5rem;
+      margin-top: 0;
+      justify-self: center;
    }
    &__image{
-      width: 290px;
-      height: 345px;
+      width: min(100%, 20rem);
       justify-self: center;
    }
    &__img{
+      width: 100%;
+      height: auto;
       border-radius: 1.5rem;
       filter: var(--shadow-img-small);
    }

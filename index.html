@@ -87,13 +87,28 @@
           </ul>
 
           <!-- Theme button -->
-          <i class="ri-moon-fill nav__theme" id="theme-button"></i>
+          <button
+            type="button"
+            class="nav__theme"
+            id="theme-button"
+            aria-label="Toggle color theme"
+            aria-pressed="true"
+          >
+            <i class="ri-moon-fill" aria-hidden="true"></i>
+          </button>
         </div>
 
         <!-- Toggle button -->
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="ri-menu-5-fill"></i>
-        </div>
+        <button
+          type="button"
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+        >
+          <i class="ri-menu-5-fill" aria-hidden="true"></i>
+        </button>
       </nav>
     </header>
 
@@ -219,7 +234,7 @@
           <div class="app__data">
             <h4 class="section__subtitle">PAYMENT</h4>
 
-            <h2 class="section__title">What Your Delivery Includes</h2>
+            <h2 class="section__title">Your Delivery Includes</h2>
 
             <div class="app__description app__description--list">
               <span><span>Local Orléans service</span><span>✓</span></span>
@@ -234,40 +249,46 @@
               >
             </div>
 
-            <a href="#" class="button">Request Delivery</a>
+            <div class="app__actions">
+              <a href="#" class="button">Request Delivery</a>
 
-            <div class="app__social home__social">
-              <a
-                href="https://m.me/orleansdirect"
-                target="_blank"
-                class="home__link"
-              >
-                <i class="ri-messenger-fill"></i>
-              </a>
+              <div class="app__social home__social">
+                <a
+                  href="https://m.me/orleansdirect"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home__link"
+                >
+                  <i class="ri-messenger-fill"></i>
+                </a>
 
-              <a
-                href="https://www.instagram.com/orleansdirect/"
-                target="_blank"
-                class="home__link"
-              >
-                <i class="ri-instagram-fill"></i>
-              </a>
+                <a
+                  href="https://www.instagram.com/orleansdirect/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home__link"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
 
-              <a
-                href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
-                target="_blank"
-                class="home__link"
-              >
-                <i class="ri-whatsapp-fill"></i>
-              </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home__link"
+                >
+                  <i class="ri-whatsapp-fill"></i>
+                </a>
 
-              <a
-                href="https://web.telegram.org/"
-                target="_blank"
-                class="home__link"
-              >
-                <i class="ri-telegram-2-fill"></i>
-              </a>
+                <a
+                  href="https://web.telegram.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="home__link"
+                >
+                  <i class="ri-telegram-2-fill"></i>
+                </a>
+              </div>
             </div>
           </div>
 

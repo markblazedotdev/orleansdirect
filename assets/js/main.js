@@ -7,8 +7,15 @@ const initSite = () => {
     const nav = document.getElementById(navId),
       toggle = document.getElementById(toggleId);
 
+    if (!nav || !toggle) return;
+
     toggle.addEventListener("click", () => {
-      nav.classList.toggle("show-menu");
+      const isOpen = nav.classList.toggle("show-menu");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu",
+      );
     });
   };
   showMenu("nav-menu", "nav-toggle");
@@ -18,8 +25,11 @@ const initSite = () => {
 
   const linkAction = () => {
     const navMenu = document.getElementById("nav-menu");
+    const navToggle = document.getElementById("nav-toggle");
     // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove("show-menu");
+    navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Open navigation menu");
   };
   navLink.forEach((n) => n.addEventListener("click", linkAction));
 
@@ -78,13 +88,19 @@ const initSite = () => {
   const applyTheme = (theme) => {
     const isDark = theme !== "light";
     themeRoot.classList.toggle(darkTheme, isDark);
-    themeButton.classList.toggle(iconTheme, isDark);
+    themeButton?.setAttribute("aria-pressed", String(isDark));
+    themeButton?.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light theme" : "Switch to dark theme",
+    );
+    const themeIcon = themeButton?.querySelector("i");
+    themeIcon?.classList.toggle(iconTheme, isDark);
   };
 
   // Default to dark mode unless the user previously chose light mode.
   applyTheme(localStorage.getItem(themeStorageKey) || "dark");
 
-  themeButton.addEventListener("click", () => {
+  themeButton?.addEventListener("click", () => {
     const nextTheme = themeRoot.classList.contains(darkTheme)
       ? "light"
       : "dark";
@@ -112,8 +128,6 @@ const initSite = () => {
   sr.reveal(`.service__card, .service__title, .service__description`, {
     interval: 100,
   });
-
-  sr.reveal(`.menu__card`, { interval: 100 });
 
   sr.reveal(
     `.app .section__subtitle, .app .section__title, .app__description, .app .button`,

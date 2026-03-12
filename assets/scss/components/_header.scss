@@ -33,6 +33,11 @@
    }
    &__toggle{
       display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+      border: 0;
       font-size: 1.5rem;
       color: var(--title-color);
       cursor: pointer;
@@ -74,10 +79,23 @@
       position: absolute;
       top: 2rem;
       right: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 0;
+      border: 0;
       font-size: 1.25rem;
       color: var(--title-color);
       cursor: pointer;
    }
+}
+
+.nav__toggle:focus-visible,
+.nav__theme:focus-visible{
+   outline: 2px solid var(--first-color);
+   outline-offset: .3rem;
+   border-radius: .75rem;
 }
 
 /* Show menu */
