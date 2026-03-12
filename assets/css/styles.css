@@ -703,6 +703,8 @@ img {
 
 .app__description {
   margin-bottom: 0;
+  width: min(100%, 26rem);
+  justify-self: center;
 }
 
 .app__description--list {
@@ -717,10 +719,49 @@ img {
   gap: 1rem;
 }
 
+.app__pricing {
+  width: min(100%, 26rem);
+  justify-self: center;
+  padding: 1.25rem 1.1rem;
+  border: 1px solid rgba(58, 123, 255, 0.18);
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.82),
+    rgba(232, 240, 255, 0.76)
+  );
+  box-shadow: 0 14px 28px rgba(10, 37, 64, 0.08);
+}
+
+.dark-theme .app__pricing {
+  background: linear-gradient(
+    180deg,
+    rgba(19, 28, 44, 0.82),
+    rgba(12, 18, 30, 0.78)
+  );
+}
+
+.app__pricing-title {
+  margin-bottom: 0.35rem;
+  font-size: var(--h3-font-size);
+}
+
+.app__pricing-formula {
+  margin-bottom: 0.35rem;
+  color: var(--title-color);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: var(--font-bold);
+}
+
+.app__pricing-note {
+  margin: 0;
+}
+
 .app__actions {
   display: grid;
   justify-items: center;
   gap: 1rem;
+  margin-top: 0.25rem;
 }
 
 .app__social {
@@ -732,6 +773,8 @@ img {
   width: min(100%, 20rem);
   justify-self: center;
   position: relative;
+  display: grid;
+  gap: 1.85rem;
 }
 
 .app__img {
@@ -1196,14 +1239,22 @@ img {
     text-align: initial;
   }
   .app__data {
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
   .app__description {
     margin-top: 0.5rem;
     padding-right: 1rem;
+    width: min(100%, 26rem);
+    max-width: 26rem;
+  }
+  .app__pricing {
+    justify-self: start;
+    width: min(100%, 24rem);
+    padding: 1.5rem 1.35rem;
   }
   .app__actions {
     justify-items: start;
+    margin-top: 0;
   }
   .app__social {
     justify-self: start;

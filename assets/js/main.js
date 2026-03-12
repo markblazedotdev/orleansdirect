@@ -179,7 +179,7 @@ const initSite = () => {
   });
 
   sr.reveal(
-    `.app .section__subtitle, .app .section__title, .app__description, .app .button`,
+    `.app .section__subtitle, .app .section__title, .app__pricing, .app__description, .app .button`,
     { interval: 100 },
   );
   sr.reveal(`.app__image`, { origin: "bottom", delay: 900 });
