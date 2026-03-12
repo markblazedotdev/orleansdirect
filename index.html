@@ -116,8 +116,16 @@
               </h1>
 
               <p class="home__description">
-                Free membership connecting Orléans residents and local
-                businesses.
+                <button
+                  type="button"
+                  class="membership-note__trigger"
+                  data-membership-trigger
+                  aria-controls="membership-note"
+                  aria-expanded="false"
+                >
+                  Free*
+                </button>
+                membership connecting Orléans residents and local businesses.
               </p>
 
               <a href="#app" class="button">Request Now</a>
@@ -365,7 +373,16 @@
             </a>
 
             <p class="footer__description">
-              Free membership connecting Orléans residents and local businesses.
+              <button
+                type="button"
+                class="membership-note__trigger"
+                data-membership-trigger
+                aria-controls="membership-note"
+                aria-expanded="false"
+              >
+                Free*
+              </button>
+              membership connecting Orléans residents and local businesses.
             </p>
           </div>
 
@@ -457,6 +474,41 @@
     <a href="#" class="scrollup" id="scroll-up">
       <i class="ri-arrow-up-line"></i>
     </a>
+
+    <div
+      class="membership-note"
+      id="membership-note"
+      data-membership-note
+      hidden
+      aria-hidden="true"
+    >
+      <div class="membership-note__backdrop" data-membership-close></div>
+      <div
+        class="membership-note__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="membership-note-title"
+        aria-describedby="membership-note-description"
+      >
+        <button
+          type="button"
+          class="membership-note__close"
+          data-membership-close
+          aria-label="Close membership message"
+        >
+          <i class="ri-close-line" aria-hidden="true"></i>
+        </button>
+
+        <h3 class="membership-note__title" id="membership-note-title">
+          Membership Reminder
+        </h3>
+        <p class="membership-note__text" id="membership-note-description">
+          Free membership stays active as long as you place at least one order
+          every 30 days. If no order is placed within 30 days, the membership
+          expires.
+        </p>
+      </div>
+    </div>
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>

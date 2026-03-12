@@ -435,6 +435,34 @@ img {
   margin-bottom: 1.25rem;
   max-width: 32rem;
 }
+
+.membership-note__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--first-color);
+  font: inherit;
+  font-weight: var(--font-semi-bold);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+  cursor: pointer;
+}
+
+.membership-note__trigger:hover,
+.membership-note__trigger:focus-visible {
+  color: var(--title-color);
+}
+
+.membership-note__trigger:focus-visible {
+  outline: 2px solid var(--first-color);
+  outline-offset: 0.2rem;
+  border-radius: 0.2rem;
+}
+
 .home__social {
   display: flex;
   justify-content: center;
@@ -886,6 +914,74 @@ img {
   text-align: center;
   color: var(--text-color-light);
   font-size: var(--small-font-size);
+}
+
+.membership-note {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-tooltip) + 10);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.membership-note[hidden] {
+  display: none;
+}
+
+.membership-note__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.48);
+  backdrop-filter: blur(6px);
+}
+
+.membership-note__dialog {
+  position: relative;
+  width: min(100%, 28rem);
+  padding: 1.5rem;
+  border: 1px solid var(--surface-line);
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98),
+    rgba(241, 246, 255, 0.96)
+  );
+  box-shadow: 0 24px 48px rgba(10, 37, 64, 0.18);
+}
+
+.dark-theme .membership-note__dialog {
+  background: linear-gradient(
+    180deg,
+    rgba(19, 28, 44, 0.98),
+    rgba(12, 18, 30, 0.96)
+  );
+}
+
+.membership-note__close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--surface-line);
+  border-radius: 999px;
+  background: var(--body-color);
+  color: var(--title-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.membership-note__title {
+  margin-bottom: 0.75rem;
+  padding-right: 2rem;
+}
+
+.membership-note__text {
+  margin: 0;
+  line-height: 1.6;
 }
 
 /*=============== SCROLL BAR ===============*/

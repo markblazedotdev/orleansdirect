@@ -109,6 +109,55 @@ const initSite = () => {
     localStorage.setItem(themeStorageKey, nextTheme);
   });
 
+  /*=============== MEMBERSHIP NOTE ===============*/
+  const membershipNote = document.querySelector("[data-membership-note]");
+  const membershipTriggers = document.querySelectorAll(
+    "[data-membership-trigger]",
+  );
+  const membershipClosers = document.querySelectorAll("[data-membership-close]");
+  let previousFocusedElement = null;
+
+  const setMembershipExpanded = (isExpanded) => {
+    membershipTriggers.forEach((trigger) => {
+      trigger.setAttribute("aria-expanded", String(isExpanded));
+    });
+  };
+
+  const openMembershipNote = (trigger) => {
+    if (!membershipNote) return;
+
+    previousFocusedElement = trigger;
+    membershipNote.hidden = false;
+    membershipNote.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    setMembershipExpanded(true);
+    membershipNote
+      .querySelector(".membership-note__close")
+      ?.focus({ preventScroll: true });
+  };
+
+  const closeMembershipNote = () => {
+    if (!membershipNote || membershipNote.hidden) return;
+
+    membershipNote.hidden = true;
+    membershipNote.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setMembershipExpanded(false);
+    previousFocusedElement?.focus({ preventScroll: true });
+  };
+
+  membershipTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => openMembershipNote(trigger));
+  });
+
+  membershipClosers.forEach((closer) => {
+    closer.addEventListener("click", closeMembershipNote);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMembershipNote();
+  });
+
   /*=============== SCROLL REVEAL ANIMATION ===============*/
   const sr = ScrollReveal({
     origin: "top",
