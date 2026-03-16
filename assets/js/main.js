@@ -221,3 +221,11 @@ const initSite = () => {
 };
 
 initSite();
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {
+      // Ignore registration failures so the main site remains unaffected.
+    });
+  });
+}
