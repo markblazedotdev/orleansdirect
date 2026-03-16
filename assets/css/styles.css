@@ -1125,6 +1125,40 @@ body.app-ready .app-splash {
   padding-right: 2rem;
 }
 
+.membership-note__list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.membership-note__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.85rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(58, 123, 255, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.dark-theme .membership-note__item {
+  border-color: rgba(122, 168, 255, 0.18);
+  background: rgba(16, 27, 43, 0.72);
+}
+
+.membership-note__mark {
+  width: 1.85rem;
+  height: 1.85rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4c87ff 0%, #2f69de 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(47, 105, 222, 0.24);
+}
+
 .membership-note__text {
   margin: 0;
   line-height: 1.6;
