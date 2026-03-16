@@ -1227,7 +1227,7 @@ body.app-ready .app-splash {
 
 @media screen and (max-width: 420px) {
   .membership-note__dialog {
-    margin-top: 1.75rem;
+    margin-top: 3rem;
   }
 }
 
