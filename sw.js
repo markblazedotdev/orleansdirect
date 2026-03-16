@@ -8,7 +8,7 @@ const APP_SHELL = [
   "./assets/js/scrollreveal.min.js",
   "./assets/vendor/remixicon/fonts/remixicon.css",
   "./assets/vendor/remixicon/fonts/remixicon.woff2",
-  "./assets/img/favicon/site.webmanifest",
+  "./site.webmanifest",
   "./assets/img/favicon/favicon-32x32.png",
   "./assets/img/favicon/favicon-16x16.png",
   "./assets/img/favicon/apple-touch-icon.png",

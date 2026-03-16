@@ -222,6 +222,18 @@ const initSite = () => {
 
 initSite();
 
+const markAppReady = () => {
+  window.setTimeout(() => {
+    document.body.classList.add("app-ready");
+  }, 450);
+};
+
+if (document.readyState === "complete") {
+  markAppReady();
+} else {
+  window.addEventListener("load", markAppReady, { once: true });
+}
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js").catch(() => {
