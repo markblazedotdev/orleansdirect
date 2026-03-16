@@ -1,4 +1,4 @@
-const CACHE_NAME = "orleans-direct-v2";
+const CACHE_NAME = "orleans-direct-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -48,6 +48,31 @@ self.addEventListener("fetch", (event) => {
 
   const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) return;
+
+  // Always prefer the network for document navigations so deployed HTML
+  // updates are reflected immediately in the installed app.
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (
+            networkResponse &&
+            networkResponse.status === 200 &&
+            networkResponse.type === "basic"
+          ) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
+
+          return networkResponse;
+        })
+        .catch(() => caches.match(event.request))
+        .then((response) => response || caches.match("./index.html")),
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
