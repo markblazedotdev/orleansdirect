@@ -211,7 +211,7 @@ const initSite = () => {
   sr.reveal(`.footer__data, .footer__content div`, { interval: 100 });
 
   /*=============== AUTO COPYRIGHT YEAR UPDATE ===============*/
-  document.getElementById("copyright-year").innerHTML =
+  document.getElementById("copyright-year").textContent =
     new Date().getFullYear();
 
   shadowHeader();
