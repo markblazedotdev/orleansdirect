@@ -24,12 +24,7 @@ console.log("📦 Firestore ready");
 console.log("Project ID:", firebaseConfig.projectId);
 
 const buildRequestRecord = (request = {}) => {
-  const requestId =
-    request.requestId ||
-    `web_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-
   return {
-    requestId,
     uid: request.uid || null,
     channel: "website",
     pickupAddress: request.pickupAddress || "",
@@ -54,7 +49,7 @@ async function createRequest(request = {}) {
   const docRef = await addDoc(collection(db, "requests"), requestRecord);
 
   console.log("✅ Request written with ID:", docRef.id);
-  return { id: docRef.id, requestId: requestRecord.requestId };
+  return { id: docRef.id };
 }
 
 window.orleansDirectFirebase = {
