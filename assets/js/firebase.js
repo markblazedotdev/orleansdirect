@@ -23,36 +23,42 @@ console.log("🔥 Firebase app initialized");
 console.log("📦 Firestore ready");
 console.log("Project ID:", firebaseConfig.projectId);
 
-async function createTestRequest() {
-  try {
-    const docRef = await addDoc(collection(db, "requests"), {
-      requestId: "auto_test",
-      uid: "test_user_001",
-      channel: "website",
+const buildRequestRecord = (request = {}) => {
+  const requestId =
+    request.requestId ||
+    `web_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
-      pickupAddress: "Walmart Innes",
-      dropoffAddress: "456 Test Ave, Orleans, ON",
-      itemsRequested: "Test order",
+  return {
+    requestId,
+    uid: request.uid || null,
+    channel: "website",
+    pickupAddress: request.pickupAddress || "",
+    dropoffAddress: request.dropoffAddress || "",
+    itemsRequested: request.itemsRequested || "",
+    distanceKm: request.distanceKm ?? null,
+    deliveryFee: request.deliveryFee ?? null,
+    estimatedItemSubtotal: request.estimatedItemSubtotal ?? null,
+    estimatedTotal: request.estimatedTotal ?? null,
+    serviceFee: request.serviceFee ?? 0,
+    status: request.status || "initiated",
+    paymentStatus: request.paymentStatus || "pending",
+    sourcePath: request.sourcePath || window.location.pathname,
+    sourceHash: request.sourceHash || window.location.hash || "",
+    sourceSection: request.sourceSection || "unknown",
+    createdAt: serverTimestamp(),
+  };
+};
 
-      distanceKm: 3.5,
-      deliveryFee: 13.5,
-      estimatedItemSubtotal: 15.0,
-      estimatedTotal: 28.5,
-      serviceFee: 0.0,
+async function createRequest(request = {}) {
+  const requestRecord = buildRequestRecord(request);
+  const docRef = await addDoc(collection(db, "requests"), requestRecord);
 
-      status: "quoted",
-      paymentStatus: "unpaid",
-
-      createdAt: serverTimestamp(),
-    });
-
-    console.log("✅ Request written with ID:", docRef.id);
-  } catch (error) {
-    console.error("❌ Error writing request:", error);
-  }
+  console.log("✅ Request written with ID:", docRef.id);
+  return { id: docRef.id, requestId: requestRecord.requestId };
 }
 
-// TEMP: expose to window so we can trigger it
-window.createTestRequest = createTestRequest;
+window.orleansDirectFirebase = {
+  createRequest,
+};
 
-export { app, db };
+export { app, db, createRequest };

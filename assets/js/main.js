@@ -155,9 +155,34 @@ const initSite = () => {
     closer.addEventListener("click", closeMembershipNote);
   });
 
-  const testFirestoreButton = document.getElementById("test-firestore-write");
-  testFirestoreButton?.addEventListener("click", () => {
-    window.createTestRequest?.();
+  const requestButtons = document.querySelectorAll("[data-request-trigger]");
+
+  requestButtons.forEach((button) => {
+    button.addEventListener("click", async () => {
+      if (button.dataset.requestPending === "true") return;
+
+      button.dataset.requestPending = "true";
+
+      try {
+        const sourceSection =
+          button.closest("section")?.id || button.closest("[id]")?.id || "unknown";
+
+        await window.orleansDirectFirebase?.createRequest({
+          pickupAddress: "Request started from website",
+          dropoffAddress: "",
+          itemsRequested: "",
+          status: "initiated",
+          paymentStatus: "pending",
+          sourcePath: window.location.pathname,
+          sourceHash: window.location.hash,
+          sourceSection,
+        });
+      } catch (error) {
+        console.error("❌ Error creating request:", error);
+      } finally {
+        delete button.dataset.requestPending;
+      }
+    });
   });
 
   document.addEventListener("keydown", (event) => {
