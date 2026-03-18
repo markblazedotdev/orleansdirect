@@ -155,6 +155,11 @@ const initSite = () => {
     closer.addEventListener("click", closeMembershipNote);
   });
 
+  const testFirestoreButton = document.getElementById("test-firestore-write");
+  testFirestoreButton?.addEventListener("click", () => {
+    window.createTestRequest?.();
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMembershipNote();
   });
