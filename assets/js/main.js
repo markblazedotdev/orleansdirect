@@ -210,10 +210,10 @@ const initSite = () => {
   });
 
   sr.reveal(
-    `.app .section__subtitle, .app .section__title, .app__pricing, .app__description, .app .button`,
+    `.app .section__subtitle, .app .section__title, .app__intro, .app__pricing, .app__fineprint, .app .button, .app__media`,
     { interval: 100 },
   );
-  sr.reveal(`.app__image`, { origin: "bottom", delay: 900 });
+  sr.reveal(`.app__card`, { interval: 100, origin: "bottom" });
 
   sr.reveal(`.map__area`, { origin: "right" });
   sr.reveal(`.map__card`, { origin: "left", delay: 600 });

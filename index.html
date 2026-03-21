@@ -101,7 +101,7 @@
             </li>
 
             <li>
-              <a href="#app" class="nav__link">Payment</a>
+              <a href="#app" class="nav__link">Pricing</a>
             </li>
 
             <li>
@@ -267,86 +267,74 @@
       <section class="app section" id="app">
         <div class="app__container container grid">
           <div class="app__data">
-            <h4 class="section__subtitle">PAYMENT</h4>
+            <h4 class="section__subtitle">PRICING</h4>
 
-            <h2 class="section__title">Delivery Includes</h2>
+            <h2 class="section__title">Straightforward local delivery.</h2>
+
+            <p class="app__intro">
+              One clear formula, no hidden add-ons, and secure payment.
+            </p>
 
             <div class="app__pricing">
-              <h3 class="app__pricing-title">Simple Pricing</h3>
+              <div class="app__pricing-head">
+                <h3 class="app__pricing-title">Simple Pricing</h3>
+                <span class="app__badge">No hidden fees</span>
+              </div>
+
               <p class="app__pricing-formula">$10 base fee + $1/km delivery</p>
               <p class="app__pricing-note">
-                Distance calculated using Google Maps routes.
+                Distance is calculated using the Google Maps route from pickup
+                to drop-off.
               </p>
-            </div>
 
-            <div class="app__description app__description--list">
-              <span><span>Local Orléans service</span><span>✓</span></span>
-              <span
-                ><span>Registered Ontario Business</span><span>✓</span></span
-              >
-              <span><span>Secure Stripe payments</span><span>✓</span></span>
-              <span
-                ><span>Transparent distance pricing</span><span>✓</span></span
-              >
-              <span><span>No store price markups</span><span>✓</span></span>
-              <span><span>No surge pricing</span><span>✓</span></span>
-              <span><span>Members-only delivery</span><span>✓</span></span>
-            </div>
-
-            <div class="app__actions">
-              <a href="#app" class="button" data-request-trigger>Request Delivery</a>
-
-              <div class="app__social home__social">
-                <a
-                  href="https://m.me/orleansdirect"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="home__link"
-                >
-                  <i class="ri-messenger-fill"></i>
-                </a>
-
-                <a
-                  href="https://www.instagram.com/orleansdirect/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="home__link"
-                >
-                  <i class="ri-instagram-fill"></i>
-                </a>
-
-                <a
-                  href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="home__link"
-                >
-                  <i class="ri-whatsapp-fill"></i>
-                </a>
-
-                <a
-                  href="https://web.telegram.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="home__link"
-                >
-                  <i class="ri-telegram-2-fill"></i>
-                </a>
+              <div class="app__example">
+                <span class="app__example-label">Example fare</span>
+                <strong class="app__example-price">5 km delivery = $15</strong>
               </div>
             </div>
-          </div>
 
-          <div class="app__image">
-            <img
-              src="assets/img/delivery-made-simple.png"
-              alt="Local delivery made simple"
-              class="app__img"
-            />
-            <img
-              src="assets/img/operations-1536x1024.png"
-              alt="Payment process on mobile"
-              class="app__img"
-            />
+            <div class="app__highlights">
+              <article class="app__card">
+                <i class="ri-route-fill" aria-hidden="true"></i>
+                <h3>Transparent pricing</h3>
+                <p>Easy to estimate before you request a run.</p>
+              </article>
+
+              <article class="app__card">
+                <i class="ri-bank-card-fill" aria-hidden="true"></i>
+                <h3>Secure payment</h3>
+                <p>Stripe checkout keeps payment fast and familiar.</p>
+              </article>
+
+              <article class="app__card">
+                <i class="ri-store-2-fill" aria-hidden="true"></i>
+                <h3>No price markups</h3>
+                <p>You pay store pricing without surge-style surprises.</p>
+              </article>
+
+              <article class="app__card">
+                <i class="ri-community-fill" aria-hidden="true"></i>
+                <h3>Built for Orléans</h3>
+                <p>Local-only service from a registered Ontario business.</p>
+              </article>
+            </div>
+
+            <p class="app__fineprint">
+              Members-only delivery. Item cost is billed separately from the
+              delivery fee.
+            </p>
+
+            <div class="app__actions">
+              <a href="#home" class="button" data-request-trigger>Request Delivery</a>
+            </div>
+
+            <div class="app__media">
+              <img
+                src="assets/img/operations-1536x1024.png"
+                alt="Operations and delivery flow"
+                class="app__media-img"
+              />
+            </div>
           </div>
         </div>
       </section>
