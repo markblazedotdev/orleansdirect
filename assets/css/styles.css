@@ -1539,6 +1539,9 @@ body.app-ready .app-splash {
   .home__description {
     font-size: var(--h3-font-size);
     margin-bottom: 3rem;
+    width: auto;
+    max-width: 28rem;
+    margin-inline: 0;
   }
   .home__social {
     justify-content: initial;

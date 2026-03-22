@@ -95,6 +95,9 @@
       &__description{
          font-size: var(--h3-font-size);
          margin-bottom: 3rem;
+         width: auto;
+         max-width: 28rem;
+         margin-inline: 0;
       }
       &__social{
          justify-content: initial;
