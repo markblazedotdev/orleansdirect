@@ -1,51 +1,64 @@
 /*=============== APP ===============*/
 .app{
-   &__container{
-      background-color: var(--first-color-light);
-      padding: 3rem 1.5rem;
-      border-radius: 2rem;
-      row-gap: 2rem;
-      overflow: hidden;
-      transition: background-color .4s;
-   }
-   &__data .section__title{
-      margin-bottom: 0;
-   }
-   &__data{
-      display: grid;
-      gap: 1.25rem;
-      text-align: center;
-   }
-   &__description{
-      margin-bottom: 0;
-   }
-   &__description--list{
-      display: grid;
-      gap: .75rem;
-   }
-   &__description--list > span{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-   }
    &__actions{
       display: grid;
       justify-items: center;
       gap: 1rem;
+      margin-top: .45rem;
    }
-   &__social{
-      margin-top: 0;
+
+   &__media{
+      position: relative;
+      width: min(100%, 34rem);
       justify-self: center;
+      margin-top: .55rem;
+      padding: 1rem;
+      overflow: hidden;
+      border-radius: 2rem;
+      background: linear-gradient(
+         180deg,
+         rgba(255, 255, 255, .94) 0%,
+         rgba(220, 231, 244, .88) 100%
+      );
+      border: 1px solid rgba(58, 123, 255, .14);
+      box-shadow:
+         0 18px 40px rgba(10, 37, 64, .12),
+         inset 0 1px 0 rgba(255, 255, 255, .35);
+      isolation: isolate;
+
+      &::before{
+         content: "";
+         position: absolute;
+         inset: 0;
+         border-radius: inherit;
+         box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+         pointer-events: none;
+         z-index: 1;
+      }
    }
-   &__image{
-      width: min(100%, 20rem);
-      justify-self: center;
+
+   &__media-frame{
+      overflow: hidden;
+      border-radius: 1rem;
    }
-   &__img{
-      width: 100%;
+
+   &__media-img{
+      display: block;
+      width: 106%;
+      max-width: none;
       height: auto;
-      border-radius: 1.5rem;
-      filter: var(--shadow-img-small);
+      margin-left: -6%;
    }
+}
+
+.dark-theme .app__media{
+   background: linear-gradient(
+      180deg,
+      rgba(15, 42, 72, .96) 0%,
+      rgba(8, 29, 51, .96) 100%
+   );
+   border-color: rgba(145, 183, 255, .16);
+   box-shadow:
+      0 20px 44px rgba(0, 0, 0, .32),
+      inset 0 1px 0 rgba(255, 255, 255, .04);
 }
