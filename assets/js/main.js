@@ -3,9 +3,20 @@ const initSite = () => {
   document.body.dataset.siteInitialized = "true";
 
   /*=============== SHOW MENU ===============*/
-  const showMenu = (navId, toggleId) => {
-    const nav = document.getElementById(navId),
-      toggle = document.getElementById(toggleId);
+  const navMenu = document.getElementById("nav-menu");
+  const navToggle = document.getElementById("nav-toggle");
+
+  const closeMenu = () => {
+    if (!navMenu) return;
+
+    navMenu.classList.remove("show-menu");
+    navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Open navigation menu");
+  };
+
+  const showMenu = () => {
+    const nav = navMenu,
+      toggle = navToggle;
 
     if (!nav || !toggle) return;
 
@@ -18,20 +29,35 @@ const initSite = () => {
       );
     });
   };
-  showMenu("nav-menu", "nav-toggle");
+  showMenu();
 
   /*=============== REMOVE MENU MOBILE ===============*/
   const navLink = document.querySelectorAll(".nav__link");
 
   const linkAction = () => {
-    const navMenu = document.getElementById("nav-menu");
-    const navToggle = document.getElementById("nav-toggle");
     // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove("show-menu");
-    navToggle?.setAttribute("aria-expanded", "false");
-    navToggle?.setAttribute("aria-label", "Open navigation menu");
+    closeMenu();
   };
   navLink.forEach((n) => n.addEventListener("click", linkAction));
+
+  document.addEventListener("click", (event) => {
+    if (!navMenu?.classList.contains("show-menu")) return;
+
+    const target = event.target;
+
+    if (!(target instanceof Node)) return;
+    if (navMenu.contains(target) || navToggle?.contains(target)) return;
+
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    if (!navMenu?.classList.contains("show-menu")) return;
+
+    closeMenu();
+    navToggle?.focus({ preventScroll: true });
+  });
 
   /*=============== ADD SHADOW HEADER ===============*/
   const shadowHeader = () => {
