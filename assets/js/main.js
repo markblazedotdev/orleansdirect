@@ -235,19 +235,33 @@ const initSite = () => {
     interval: 100,
   });
 
-  sr.reveal(
-    `.app .section__subtitle, .app .section__title, .app__intro, .app__pricing, .app__fineprint, .app .button, .app__media`,
-    {
-      interval: 100,
-      viewFactor: 0.35,
-      viewOffset: { top: 0, right: 0, bottom: 220, left: 0 },
-    },
-  );
+  const appRevealViewport = {
+    viewFactor: 0.3,
+    viewOffset: { top: 0, right: 0, bottom: 180, left: 0 },
+  };
+
+  sr.reveal(`.app .section__subtitle, .app .section__title, .app__intro`, {
+    interval: 100,
+    ...appRevealViewport,
+  });
+
+  sr.reveal(`.app__pricing, .app__fineprint, .app .button`, {
+    interval: 120,
+    delay: 150,
+    ...appRevealViewport,
+  });
+
   sr.reveal(`.app__card`, {
     interval: 100,
+    delay: 300,
     origin: "bottom",
-    viewFactor: 0.35,
-    viewOffset: { top: 0, right: 0, bottom: 220, left: 0 },
+    ...appRevealViewport,
+  });
+
+  sr.reveal(`.app__media`, {
+    delay: 450,
+    origin: "bottom",
+    ...appRevealViewport,
   });
 
   sr.reveal(`.map__area`, { origin: "right" });
