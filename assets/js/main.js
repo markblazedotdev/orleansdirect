@@ -237,9 +237,18 @@ const initSite = () => {
 
   sr.reveal(
     `.app .section__subtitle, .app .section__title, .app__intro, .app__pricing, .app__fineprint, .app .button, .app__media`,
-    { interval: 100 },
+    {
+      interval: 100,
+      viewFactor: 0.2,
+      viewOffset: { top: 0, right: 0, bottom: 120, left: 0 },
+    },
   );
-  sr.reveal(`.app__card`, { interval: 100, origin: "bottom" });
+  sr.reveal(`.app__card`, {
+    interval: 100,
+    origin: "bottom",
+    viewFactor: 0.2,
+    viewOffset: { top: 0, right: 0, bottom: 120, left: 0 },
+  });
 
   sr.reveal(`.map__area`, { origin: "right" });
   sr.reveal(`.map__card`, { origin: "left", delay: 600 });
