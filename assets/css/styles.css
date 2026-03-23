@@ -466,7 +466,7 @@ body.app-ready .app-splash {
 }
 
 /* Navigation for mobile devices */
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1149px) {
   .nav__menu {
     position: fixed;
     top: 5rem;
@@ -1506,6 +1506,27 @@ body.app-ready .app-splash {
 @media screen and (min-width: 768px) {
   .service__container {
     grid-template-columns: repeat(2, 220px);
+  }
+
+  .app__container {
+    width: min(100%, 680px);
+    padding: 4rem 2.5rem;
+    border-radius: 3rem;
+  }
+
+  .app__highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 34rem);
+  }
+
+  .app__pricing,
+  .app__intro,
+  .app__fineprint {
+    width: min(100%, 34rem);
+  }
+
+  .app__media {
+    width: min(100%, 34rem);
   }
 }
 
